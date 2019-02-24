@@ -1,57 +1,30 @@
 <!DOCTYPE HTML>
 <html lang="pt-BR">
+
 <head>
   <title>Assando Eventos</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900', media: 'all' %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
+
 <body class="is-preload">
   <!-- Wrapper -->
   <div id="wrapper">
 
-    <!-- Header -->
-    <header id="header">
-      <div class="inner">
-        <!-- Logo -->
-        <a href="index.html" class="logo">
-          <span class="symbol"><%= image_tag('logo.svg')%></span><span class="title">Assando Eventos</span>
-        </a>
-        <!-- Nav -->
-        <nav>
-          <ul>
-            <li><a href="#menu">Menu</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <%= render 'header' %>
 
-    <!-- Menu -->
-    <nav id="menu">
-      <h2>Menu</h2>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="generic.html">Ipsum veroeros</a></li>
-        <li><a href="generic.html">Tempus etiam</a></li>
-        <li><a href="generic.html">Consequat dolor</a></li>
-        <li><a href="elements.html">Elements</a></li>
-      </ul>
-    </nav>
+    <%= render 'menu' %>
 
-    <!-- Main -->
-    <%= yield %>
+    <div id="main">
+      <%= yield %>
+    </div>
+    <%= render 'footer' %>
 
-    <!-- Footer -->
-    <footer id="footer">
-      <div class="inner">
-        <ul class="copyright">
-          <li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-        </ul>
-      </div>
-    </footer>
   </div>
 
-  <!-- Scripts -->
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 </body>
 </html>
