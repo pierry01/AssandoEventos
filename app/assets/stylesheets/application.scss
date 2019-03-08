@@ -52,3 +52,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 	@import 'layout/main';
 	@import 'layout/footer';
 	@import 'layout/wrapper';
+
+	span.error {
+		color: #cc3300;
+		margin-top: -50px;
+		margin-left: 200px;
+		position: absolute;
+	}
