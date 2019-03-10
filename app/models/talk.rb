@@ -1,5 +1,6 @@
 class Talk < ApplicationRecord
-  validates :title, :description, :start, :finish, presence: true
+  belongs_to :speaker
+  validates :title, :description, :start, :speaker, :finish, presence: true
   validate :start_is_before_finish
 
   before_save :generate_slug

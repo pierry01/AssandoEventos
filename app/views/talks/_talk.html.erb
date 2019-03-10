@@ -2,4 +2,4 @@
   <%= I18n.l(talk.start, format: '%Hh%M') %> -
   <%= link_to talk.title, talk_path(id: talk.slug) %>
 </h4>
-<p><%= truncate(talk.description, length: 50) %></p>
+<p><%= truncate(talk.description, length: 50) %> - por <b><%= talk.speaker.name %></b></p>

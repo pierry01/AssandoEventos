@@ -49,7 +49,7 @@ RSpec.describe AttendeesController, type: :controller do
       it 'do not create a new attendee' do
         expect do
           post :create, params: { attendee: params }
-        end.to_not change(Attendee, :count).from(0)
+        end.to_not change(Attendee, :count)
       end
 
       it 'render form' do

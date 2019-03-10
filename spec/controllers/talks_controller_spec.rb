@@ -5,8 +5,8 @@ RSpec.describe TalksController, type: :controller do
 
   describe 'GET #index' do
     before do
-      Talk.create(title: 'Primeira Palestra', description: 'Qualquer', start: '10:00:00', finish: '11:00:00')
-      Talk.create(title: 'Abertura', description: 'Qualquer', start: '09:00:00', finish: '10:00:00')
+      speaker = Speaker.create!(name: 'Jean Pierry', email: 'pierrybm@gmail.com')
+      Talk.create!(title: 'Título da Palestra', description: 'Descrição da Palestra', start: '10:00:00', finish: '12:00:00', speaker: speaker)
       get :index
     end
 
@@ -17,14 +17,16 @@ RSpec.describe TalksController, type: :controller do
 
     it 'include list of talks' do
       talks = assigns(:talks)
-      expect(talks.count).to eq(2)
-      expect(talks.first.title).to eq('Abertura')
-      expect(talks.second.title).to eq('Primeira Palestra')
+      expect(talks.count).to eq(1)
+      expect(talks.first.title).to eq('Título da Palestra')
     end
   end
 
   describe 'GET #show' do
-    let(:talk) { Talk.create!(title: 'Primeira Palestra', description: 'Qualquer', start: '10:00:00', finish: '11:00:00') }
+    let(:talk) do
+      speaker = Speaker.create!(name: 'Jean Pierry', email: 'pierrybm@gmail.com')
+      Talk.create!(title: 'Título da Palestra', description: 'Descrição da Palestra', start: '10:00:00', finish: '12:00:00', speaker: speaker)
+    end
 
     before { get :show, params: { id: talk.slug } }
 
