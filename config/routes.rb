@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resources :talks, path: 'palestras', only: [:show]
   resources :attendees, path: 'inscritos', only: [:new, :create]
+  resources :contacts, path: 'contato', only: [:new, :create]
 end

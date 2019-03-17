@@ -1,6 +1,5 @@
 <!DOCTYPE HTML>
 <html lang="pt-BR">
-
 <head>
   <% if @title.present? %>
     <title><%= @title %> - Assando Eventos </title>
@@ -16,16 +15,13 @@
 <body class="is-preload">
   <!-- Wrapper -->
   <div id="wrapper">
-
     <%= render 'header' %>
-
     <%= render 'menu' %>
-
     <div id="main">
+      <%= render 'flash' %>
       <%= yield %>
     </div>
     <%= render 'footer' %>
-
   </div>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>

@@ -18,10 +18,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 @include breakpoints((
   xlarge:   ( 1281px,  1680px ),
   large:    ( 981px,   1280px ),
-	medium:   ( 737px,   980px  ),
-	small:    ( 481px,   736px  ),
-	xsmall:   ( 361px,   480px  ),
-	xxsmall:  ( null,    360px  )
+  medium:   ( 737px,   980px  ),
+  small:    ( 481px,   736px  ),
+  xsmall:   ( 361px,   480px  ),
+  xxsmall:  ( null,    360px  )
 ));
 
 // Base.
@@ -58,4 +58,21 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		margin-top: -50px;
 		margin-left: 200px;
 		position: absolute;
+	}
+
+	.flash {
+		padding: 1em 2em;
+		background: silver;
+		font-size: 1em;
+		margin-bottom: 1em;
+
+	  &.notice {
+			background: green;
+			color: lime;
+		}
+
+		&.alert {
+			background: maroon;
+			color: red;
+		}
 	}
