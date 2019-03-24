@@ -18,6 +18,7 @@ gem 'font-awesome-sass'
 gem 'rails-controller-testing'
 gem 'simple_form'
 gem 'devise'
+gem 'administrate'
 
 group :development, :test do
   gem 'rspec-rails'
