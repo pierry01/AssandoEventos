@@ -55,9 +55,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 	span.error {
 		color: #cc3300;
-		margin-top: -50px;
-		margin-left: 200px;
-		position: absolute;
 	}
 
 	.flash {
@@ -66,7 +63,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		font-size: 1em;
 		margin-bottom: 1em;
 
-	  &.notice {
+		&.notice {
 			background: green;
 			color: lime;
 		}
@@ -74,5 +71,13 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		&.alert {
 			background: maroon;
 			color: red;
+		}
+	}
+
+	.input.time {
+		display: inline-block;
+		select {
+			width: 100px;
+			display: inline-block;
 		}
 	}

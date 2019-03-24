@@ -17,6 +17,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'font-awesome-sass'
 gem 'rails-controller-testing'
 gem 'simple_form'
+gem 'devise'
 
 group :development, :test do
   gem 'rspec-rails'
