@@ -1,5 +1,10 @@
 <div class="inner">
-  <img src="<%= gravatar_url(@talk.speaker.email) %>?s=240" alt="<%= @talk.speaker.name %>">
+  <% if @talk.image_stored? %>
+    <%= image_tag(@talk.image.thumb('550x200#').url, alt: @talk.title) %>
+  <% else %>
+    <img src="<%= gravatar_url(@talk.speaker.email) %>?s=240" alt="<%= @talk.speaker.name %>">
+  <% end %>
+  <br>
   <h4> <%= @talk.speaker.name %> </h4>
   <p><%= @talk.title %> - <%= I18n.l(@talk.start, format: '%Hh%M') %> até <%= I18n.l(@talk.finish, format: '%Hh%M')%></p>
   <p><%= @talk.description %> </p>

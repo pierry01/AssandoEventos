@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_24_173340) do
+ActiveRecord::Schema.define(version: 2019_03_30_134308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2019_03_24_173340) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.bigint "speaker_id"
+    t.string "image_uid"
+    t.string "image_name"
     t.index ["slug"], name: "index_talks_on_slug", unique: true
     t.index ["speaker_id"], name: "index_talks_on_speaker_id"
   end
