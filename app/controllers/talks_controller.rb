@@ -1,4 +1,6 @@
 class TalksController < ApplicationController
+  respond_to :html, :json
+
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
@@ -11,6 +13,8 @@ class TalksController < ApplicationController
     authorize @talk
 
     @title = @talk.title
+
+    respond_with @talk
   end
 
   def new

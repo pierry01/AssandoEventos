@@ -84,6 +84,8 @@ GEM
     chromedriver-helper (2.1.0)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
+    city-state (0.0.13)
+      rubyzip (~> 1.1)
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -298,6 +300,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   capybara (>= 2.15)
   chromedriver-helper
+  city-state
   coffee-rails (~> 4.2)
   devise
   dragonfly
@@ -312,6 +315,7 @@ DEPENDENCIES
   pundit
   rails (~> 5.2.2)
   rails-controller-testing
+  responders
   rspec-rails
   sass-rails
   selenium-webdriver

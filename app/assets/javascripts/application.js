@@ -3,6 +3,7 @@
 //= require browser.min
 //= require breakpoints.min
 //= require util
+//= require cities
 
 (function($) {
 

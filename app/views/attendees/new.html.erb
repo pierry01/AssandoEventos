@@ -19,6 +19,14 @@
     </div>
 
     <div class="field">
+      <%= f.input :state, collection: @states.to_a.map(&:reverse), include_blank: 'Escolha um estado', label: false %>
+    </div>
+
+    <div class="field">
+      <%= f.input :city, collection: [], label: false %>
+    </div>
+
+    <div class="field">
       <%= f.button :submit, 'Enviar' %>
     </div>
   <% end %>
