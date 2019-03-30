@@ -20,6 +20,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'administrate'
 gem 'dragonfly'
+gem 'pundit'
 
 group :development, :test do
   gem 'rspec-rails'
