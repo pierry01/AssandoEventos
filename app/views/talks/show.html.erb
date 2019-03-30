@@ -1,6 +1,6 @@
 <div class="inner">
   <% if @talk.image_stored? %>
-    <%= image_tag(@talk.image.thumb('550x200#').url, alt: @talk.title) %>
+    <%= image_tag(@talk.image.thumb('500x200#').url, alt: @talk.title) %>
   <% else %>
     <img src="<%= gravatar_url(@talk.speaker.email) %>?s=240" alt="<%= @talk.speaker.name %>">
   <% end %>
