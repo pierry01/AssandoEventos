@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   namespace :admin do
       resources :users
       resources :attendees
-      resources :names
       resources :speakers
       resources :talks
 

@@ -36,7 +36,7 @@ class SpeakerDashboard < Administrate::BaseDashboard
     :name,
     :email,
     :created_at,
-    :updated_at,
+    :updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -45,13 +45,13 @@ class SpeakerDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :talks,
     :name,
-    :email,
+    :email
   ].freeze
 
   # Overwrite this method to customize how speakers are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(speaker)
-  #   "Speaker ##{speaker.id}"
-  # end
+  def display_resource(speaker)
+    speaker.name
+  end
 end

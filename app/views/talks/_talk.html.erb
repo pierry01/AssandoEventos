@@ -7,7 +7,7 @@
     <h2><%= talk.title %></h2>
     <div class="content">
       <p><%= truncate(talk.description, length: 100) %></p>
-      <%= I18n.l(talk.start, format: '%Hh%M') %> até <%= I18n.l(talk.finish, format: '%Hh%M')%>
+      <%= I18n.l(talk.start, format: '%Hh%M') %> até <%= I18n.l(talk.finish, format: '%Hh%M') %>
       <p>Por - <b><%= talk.speaker.name %></b></p>
     </div>
   <% end %>
