@@ -22,6 +22,7 @@ gem 'administrate'
 gem 'dragonfly'
 gem 'pundit'
 gem 'city-state'
+gem 'responders'
 
 group :development, :test do
   gem 'rspec-rails'
