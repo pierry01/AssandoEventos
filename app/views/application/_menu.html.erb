@@ -2,8 +2,17 @@
 <nav id="menu">
   <h2>Estácio TCC - Eventos</h2>
   <ul>
-    <li> <%= link_to('Palestras', root_path) %>
     <li> <%= link_to('Inscreva-se!', new_attendee_path) %>
+
+    <div class="row">
+      <div class="col-sm-6"><%= link_to('Eventos', root_path) %></div>
+      <div class="col-sm-6"><%= link_to('Novo evento', new_talk_path) %></div>
+    </div>
+    
     <li> <%= link_to('Contato', new_contact_path) %>
+
+    <% if current_user.present? %>
+      <li> <%= link_to('Sair', destroy_user_session_path) %>
+    <% end %>
   </ul>
 </nav>

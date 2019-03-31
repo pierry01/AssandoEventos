@@ -5,8 +5,6 @@ $(function() {
   $state.on('change', function() {
     var state = $(this).val();
 
-    $cities.html("<option>Carregando cidades...</option>");
-
     $.getJSON("/inscritos/cities.json?state=" + state, function(data) {
       var cities = data.cities;
       var html = '';
