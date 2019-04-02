@@ -1,18 +1,24 @@
 <!-- Menu -->
 <nav id="menu">
-  <h2>Estácio TCC - Eventos</h2>
+  <h2>Estácio TCC</h2>
   <ul>
-    <li> <%= link_to('Inscreva-se!', new_attendee_path) %>
+    <li>
 
     <div class="row">
+      
+      <div class="col-sm-6"><%= link_to('Inscreva-se!', new_attendee_path) %></div>
+      <div class="col-sm-6" id="fazerlogin"><%= link_to('Faça login', new_user_session_path) %></div>
+    </div>
+    <li>
+    <div class="row">
       <div class="col-sm-6"><%= link_to('Eventos', root_path) %></div>
-      <div class="col-sm-6"><%= link_to('Novo evento', new_talk_path) %></div>
+      <div class="col-sm-6" id="novoevento"><%= link_to('Novo evento', new_talk_path) %></div>
     </div>
     
-    <li> <%= link_to('Contato', new_contact_path) %>
-
+    <li><%= link_to('Contato', new_contact_path) %>
+    <li>
     <% if current_user.present? %>
-      <li> <%= link_to('Sair', destroy_user_session_path) %>
+      <div class="col-sm-6"><%= link_to("Sair de #{current_user.email}", destroy_user_session_path) %></div>
     <% end %>
   </ul>
 </nav>

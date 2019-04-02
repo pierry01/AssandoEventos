@@ -5,7 +5,10 @@
     <img src="<%= gravatar_url(@talk.speaker.email) %>?s=240" alt="<%= @talk.speaker.name %>">
   <% end %>
   <br>
-  <h4> <%= @talk.speaker.name %> </h4>
+  <h4> <%= @talk.speaker.name %></h4>
   <p><%= @talk.title %> - <%= I18n.l(@talk.start, format: '%Hh%M') %> até <%= I18n.l(@talk.finish, format: '%Hh%M')%></p>
   <p><%= @talk.description %> </p>
+
+  <%=  %>
+
 </div>

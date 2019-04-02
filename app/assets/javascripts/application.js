@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require notifyjs
 //= require activestorage
 //= require browser.min
 //= require breakpoints.min

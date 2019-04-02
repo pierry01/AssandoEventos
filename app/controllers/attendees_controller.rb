@@ -1,5 +1,5 @@
 class AttendeesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :create]
+  skip_before_action :authenticate_user!, only: [:new, :create, :cities]
 
   def new
     @attendee = Attendee.new

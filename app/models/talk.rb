@@ -2,7 +2,7 @@ class Talk < ApplicationRecord
   dragonfly_accessor :image
 
   belongs_to :speaker
-  
+
   validates :title, :description, :start, :speaker, :finish, presence: true
   validate :start_is_before_finish
 
