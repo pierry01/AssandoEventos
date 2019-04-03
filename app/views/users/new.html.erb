@@ -1,9 +1,25 @@
 <div class="inner">
-  <h3>Inscreva-se no nosso evento</h3>
+  <h3>Inscreva-se no nosso site</h3>
 
-  <%= simple_form_for @attendee do |f| %>
+  <%= simple_form_for @user do |f| %>
     <div class="field">
       <%= f.input :name, placeholder: 'Digite seu nome', label: false %>
+    </div>
+
+    <div class="field">
+      <%= f.input :sobrenome, placeholder: 'Digite seu sobrenome', label: false %>
+    </div>
+
+    <div class="field">
+      <%= f.input :usuario, placeholder: 'Digite seu usuário', label: false %>
+    </div>
+
+    <div class="field">
+      <%= f.input :password, placeholder: 'Digite sua senha', label: false %>
+    </div>
+
+    <div class="field">
+      <%= f.input :password_confirmation, placeholder: 'Confirme sua senha', label: false %>
     </div>
 
     <div class="field">
@@ -18,13 +34,17 @@
       <%= f.input :phone, placeholder: 'Digite seu telefone', label: false %>
     </div>
 
-    <div class="field">
+    <%
+=begin%>
+ <div class="field">
       <%= f.input :state, collection: @states.to_a.map(&:reverse), include_blank: 'Escolha um estado', label: false %>
     </div>
 
     <div class="field">
       <%= f.input :city, collection: [], label: false %>
-    </div>
+    </div> 
+<%
+=end%>
 
     <div class="field">
       <%= f.button :submit, 'Enviar' %>

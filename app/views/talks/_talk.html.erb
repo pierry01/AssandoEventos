@@ -3,7 +3,7 @@
     <% if talk.image_stored? %>
       <%= image_tag(talk.image.thumb('320x320#').url, alt: talk.title) %>
     <% else %>
-      <img src="<%= gravatar_url(talk.speaker.email) %>?s=300" alt="">
+      <img src="<%= gravatar_url(talk.artist.email) %>?s=300" alt="">
     <% end %>
   </span>
 
@@ -12,7 +12,7 @@
     <div class="content">
       <p><%= truncate(talk.description, length: 100) %></p>
       <%= I18n.l(talk.start, format: '%Hh%M') %> até <%= I18n.l(talk.finish, format: '%Hh%M') %>
-      <p>Por - <b><%= talk.speaker.name %></b></p>
+      <p>Por - <b><%= talk.artist.name %></b></p>
     </div>
   <% end %>
 </article>

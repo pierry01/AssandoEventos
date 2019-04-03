@@ -1,9 +1,9 @@
 class Talk < ApplicationRecord
   dragonfly_accessor :image
 
-  belongs_to :speaker
+  belongs_to :artist
 
-  validates :title, :description, :start, :speaker, :finish, presence: true
+  validates :title, :description, :start, :artist, :finish, presence: true
   validate :start_is_before_finish
 
   before_save :generate_slug

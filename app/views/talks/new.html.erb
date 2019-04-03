@@ -1,6 +1,6 @@
 <div class="inner">
   <h3>Cadastro de palestra</h3>
-  <p>Olá <b><%= current_user.email %></b>, cadastre uma nova palestra</p>
+  <p>Olá <b><%= current_user.usuario %></b>, cadastre uma nova palestra</p>
 
   <%= simple_form_for @talk do |f| %>
     <div class="field">
@@ -15,14 +15,13 @@
       <%= f.input :description, placeholder: 'Digite a descrição da palestra', label: false %>
     </div>
 
-    <div class="field" >
+    <div class="field">
       <%= f.input :start, label: false %>
-      até
-      <%= f.input :finish, label: false %>
+      até <t><%= f.input :finish, label: false %>
     </div>
 
     <div class="field">
-      <%= f.association :speaker, collection: @speakers, include_blank: 'Escolha um palestrante', label: false %>
+      <%= f.association :artist, collection: @artists, include_blank: 'Escolha um palestrante', label: false %>
     </div>
 
     <div class="field">

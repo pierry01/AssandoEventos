@@ -4,8 +4,9 @@
 @import 'libs/vendor';
 @import 'libs/breakpoints';
 @import 'libs/html-grid';
-@import "font-awesome-sprockets";
-@import "font-awesome";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import 'simple_calendar';
 
 /*
 Phantom by HTML5 UP
@@ -57,12 +58,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		color: #cc3300;
 	}
 
-	#fazerlogin{
-		text-align: right;
-	}
-
-	#novoevento{
-
+	#datahora {
+		display: inline-block;
 	}
 
 	.flash {

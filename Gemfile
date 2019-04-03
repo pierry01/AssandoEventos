@@ -22,6 +22,7 @@ gem 'dragonfly'
 gem 'pundit'
 gem 'city-state'
 gem 'responders'
+gem "administrate"
 
 group :development, :test do
   gem 'rspec-rails'
@@ -36,6 +37,7 @@ group :development do
   gem 'letter_opener'
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'rails-erd'
 end
 
 group :test do
