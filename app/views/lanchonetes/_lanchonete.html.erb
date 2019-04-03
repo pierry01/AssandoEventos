@@ -1,0 +1,11 @@
+<article class="style<%= rand(1..6) %>">
+  <span class="image">
+    <% if lanchonete.image_stored? %>
+      <%= image_tag(lanchonete.image.thumb('320x320#').url, alt: lanchonete.item) %>
+    <% end %>
+  </span>
+
+  <%= link_to lanchonetes_path(id: lanchonete.slug) do %>
+    <h2><%= lanchonete.item %></h2>
+  <% end %>
+</article>

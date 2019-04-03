@@ -1,0 +1,23 @@
+<div class="inner">
+  <h3>Cadastro de item</h3>
+
+  <p>Olá <b><%= current_user.usuario %></b>, cadastre um novo item</p>
+
+  <%= simple_form_for @lanchonete do |f| %>
+    <div class="field">
+      <%= f.input :item, placeholder: 'Digite o nome do item', label: false %>
+    </div>
+
+    <div class="field">
+      <%= f.input :preco, placeholder: 'Digite o preço', label: false %>
+    </div>
+
+    <div class="field">
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="field">
+      <%= f.button :submit, 'Enviar' %>
+    </div>
+  <% end %>
+</div>

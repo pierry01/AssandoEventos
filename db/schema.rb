@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_30_134308) do
+ActiveRecord::Schema.define(version: 2019_04_03_054839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 2019_03_30_134308) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "lanchonetes", force: :cascade do |t|
+    t.string "item"
+    t.decimal "preco"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_uid"
+    t.string "image_name"
+    t.string "slug"
+    t.index ["slug"], name: "index_lanchonetes_on_slug", unique: true
   end
 
   create_table "talks", force: :cascade do |t|

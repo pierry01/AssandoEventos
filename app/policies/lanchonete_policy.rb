@@ -1,0 +1,2 @@
+class LanchonetePolicy < ApplicationPolicy
+end

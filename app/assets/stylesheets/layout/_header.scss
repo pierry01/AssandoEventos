@@ -10,7 +10,8 @@
 		@include padding(5em, 0, (3em, 0, -5em, 0));
 
 		.logo {
-			color: inherit;
+			color: teal;
+			font-size: 25px;
 			font-weight: _font(weight-bold);
 			letter-spacing: 4px;
 			margin: 0 0 (_size(element-margin) * 1.25) 0;

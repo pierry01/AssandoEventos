@@ -1,0 +1,2 @@
+module LanchoneteHelper
+end

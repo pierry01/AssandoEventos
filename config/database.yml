@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: assando-eventos-2019_production
-  username: assando-eventos-2019
+  username: pierrybm@gmail.com
   password: <%= ENV['ASSANDO-EVENTOS-2019_DATABASE_PASSWORD'] %>

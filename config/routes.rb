@@ -1,17 +1,19 @@
 Rails.application.routes.draw do
   namespace :admin do
-      resources :users
-      resources :artists
-      resources :talks
+    resources :users
+    resources :artists
+    resources :talks
+    resources :lanchonetes
 
-      root to: "users#index"
-    end
+    root to: "users#index"
+  end
+
   devise_for :users
 
   root 'talks#index'
 
   # get 'talks/marcar_presenca'
-
+  resources :lanchonetes, path: 'loja', only: [:index, :show, :new, :create]
   resources :talks, path: 'palestras', only: [:show, :new, :create]
   resources :users, path: 'usuarios', only: [:new, :create]
   resources :contacts, path: 'contato', only: [:new, :create]
