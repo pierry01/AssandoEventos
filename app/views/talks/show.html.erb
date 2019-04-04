@@ -4,13 +4,18 @@
   <% else %>
     <img src="<%= gravatar_url(@talk.artist.email) %>?s=240" alt="<%= @talk.artist.name %>">
   <% end %>
+
   <br>
+
   <h4>
     <%= @talk.artist.name %>
-    <% if current_user.present? && current_user.role == 'comum' %>
-      <%= link_to('Marcar presença', talk_path) %>
+    <% if current_user.present? %>
+      <%= link_to('Marcar presença', talks_marcar_presenca_path, method: :post) %>
+      <%=  %>
     <% end %>
   </h4>
+
   <p><%= @talk.title %> - <%= I18n.l(@talk.start, format: '%Hh%M') %> até <%= I18n.l(@talk.finish, format: '%Hh%M')%></p>
+
   <p><%= @talk.description %> </p>
 </div>

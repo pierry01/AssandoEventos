@@ -3,6 +3,8 @@ class Talk < ApplicationRecord
 
   belongs_to :artist
 
+  has_and_belongs_to_many :users
+
   validates :title, :description, :start, :artist, :finish, presence: true
   validate :start_is_before_finish
 

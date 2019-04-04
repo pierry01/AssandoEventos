@@ -10,11 +10,16 @@ class TalksController < ApplicationController
 
   def show
     @talk = Talk.find_by(slug: params[:id])
+    @@marcar_presenca = @talk.slug
     authorize @talk
-
     @title = @talk.title
-
     respond_with @talk
+  end
+
+  def marcar_presenca
+    @@talk = Talk.find_by(slug: @@marcar_presenca)
+    @@user = current_user
+    @@user.talks << @@talk
   end
 
   def new

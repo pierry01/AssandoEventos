@@ -5,4 +5,6 @@ class User < ApplicationRecord
 
   validates :name, :email, :cpf, presence: true
   validates :email, :cpf, uniqueness: true
+
+  has_and_belongs_to_many :talks
 end

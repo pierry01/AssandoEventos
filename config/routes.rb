@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   root 'talks#index'
 
-  # get 'talks/marcar_presenca'
+  post 'talks/marcar_presenca'
+
   resources :lanchonetes, path: 'loja', only: [:index, :show, :new, :create]
   resources :talks, path: 'palestras', only: [:show, :new, :create]
   resources :users, path: 'usuarios', only: [:new, :create]

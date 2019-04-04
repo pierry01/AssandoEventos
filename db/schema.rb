@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_03_054839) do
+ActiveRecord::Schema.define(version: 2019_04_04_045242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(version: 2019_04_03_054839) do
     t.string "image_name"
     t.index ["artist_id"], name: "index_talks_on_artist_id"
     t.index ["slug"], name: "index_talks_on_slug", unique: true
+  end
+
+  create_table "talks_users", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "talk_id", null: false
+    t.index ["talk_id", "user_id"], name: "index_talks_users_on_talk_id_and_user_id"
+    t.index ["user_id", "talk_id"], name: "index_talks_users_on_user_id_and_talk_id"
   end
 
   create_table "users", force: :cascade do |t|
