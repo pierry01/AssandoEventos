@@ -23,7 +23,6 @@ gem 'pundit'
 gem 'city-state'
 gem 'responders'
 gem 'administrate'
-gem 'cloudinary'
 
 group :development, :test do
   gem 'rspec-rails'

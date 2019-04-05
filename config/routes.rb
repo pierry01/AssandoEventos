@@ -17,5 +17,4 @@ Rails.application.routes.draw do
   resources :lanchonetes, path: 'loja', only: [:index, :show, :new, :create]
   resources :talks, path: 'palestras', only: [:show, :new, :create]
   resources :users, path: 'usuarios', only: [:new, :create]
-  resources :contacts, path: 'contato', only: [:new, :create]
 end

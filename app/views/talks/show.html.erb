@@ -23,7 +23,7 @@
       <% $talk.users.each do |user| %>
         <li>Nome: <%= user.name %> <%= user.sobrenome %>, CPF: <%= user.cpf %>
       <% end %>
-    <ul>
+    </ul>
   <% end %>
 
   <p><%= @talk.title %> - <%= I18n.l(@talk.start, format: '%Hh%M') %> até <%= I18n.l(@talk.finish, format: '%Hh%M')%></p>
