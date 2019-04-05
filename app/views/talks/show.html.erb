@@ -10,13 +10,21 @@
   <h3><%= @talk.artist.name %></h3>
 
   <h4>
-    <% if current_user.present? && !current_user.talks.find_by(slug: $marcar_presenca).present? %>
+    <% if current_user.present? && !current_user.talks.find_by(slug: $marcar_presenca).present? && current_user.role != 'admin' %>
       <%= link_to 'Marcar presença', talks_marcar_presenca_path, method: :post, id: 'marcar_presenca',
         onclick: 'document.getElementById("marcar_presenca").innerHTML = "Presença confirmada!"' %>
     <% elsif current_user.present? && current_user.talks.find_by(slug: $marcar_presenca).present? %>
       Presença confirmada!
     <% end %>
   </h4>
+  
+  <% if current_user.present? && current_user.role == 'admin' %>
+    <ul>
+      <% $talk.users.each do |user| %>
+        <li>Nome: <%= user.name %> <%= user.sobrenome %>, CPF: <%= user.cpf %>
+      <% end %>
+    <ul>
+  <% end %>
 
   <p><%= @talk.title %> - <%= I18n.l(@talk.start, format: '%Hh%M') %> até <%= I18n.l(@talk.finish, format: '%Hh%M')%></p>
 

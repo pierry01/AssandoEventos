@@ -11,6 +11,7 @@ class TalksController < ApplicationController
   def show
     @talk = Talk.find_by(slug: params[:id])
     $marcar_presenca = @talk.slug
+    $talk = Talk.find_by(slug: $marcar_presenca)
     authorize @talk
     @title = @talk.title
     respond_with @talk
@@ -18,7 +19,6 @@ class TalksController < ApplicationController
 
   def marcar_presenca
     $talk = Talk.find_by(slug: $marcar_presenca)
-
     current_user.talks << $talk unless current_user.talks.find_by(slug: $marcar_presenca).present?
   end
 
