@@ -10,16 +10,16 @@ class TalksController < ApplicationController
 
   def show
     @talk = Talk.find_by(slug: params[:id])
-    @@marcar_presenca = @talk.slug
+    $marcar_presenca = @talk.slug
     authorize @talk
     @title = @talk.title
     respond_with @talk
   end
 
   def marcar_presenca
-    @@talk = Talk.find_by(slug: @@marcar_presenca)
-    @@user = current_user
-    @@user.talks << @@talk
+    $talk = Talk.find_by(slug: $marcar_presenca)
+
+    current_user.talks << $talk unless current_user.talks.find_by(slug: $marcar_presenca).present?
   end
 
   def new
@@ -27,7 +27,7 @@ class TalksController < ApplicationController
     authorize @talk
 
     @artists = Artist.order(name: :asc)
-    @title = "Cadastro de palestra"
+    @title = 'Cadastro de palestra'
   end
 
   def create

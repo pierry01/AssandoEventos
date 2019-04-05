@@ -18,7 +18,7 @@ class TalkDashboard < Administrate::BaseDashboard
     updated_at: Field::DateTime,
     slug: Field::String,
     image_uid: Field::String,
-    image_name: Field::String,
+    image_name: Field::String
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -30,7 +30,7 @@ class TalkDashboard < Administrate::BaseDashboard
     :artist,
     :id,
     :title,
-    :description,
+    :description
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -58,7 +58,7 @@ class TalkDashboard < Administrate::BaseDashboard
     :finish,
     :slug,
     :image_uid,
-    :image_name,
+    :image_name
   ].freeze
 
   # Overwrite this method to customize how talks are displayed

@@ -7,11 +7,14 @@
 
   <br>
 
+  <h3><%= @talk.artist.name %></h3>
+
   <h4>
-    <%= @talk.artist.name %>
-    <% if current_user.present? %>
-      <%= link_to('Marcar presença', talks_marcar_presenca_path, method: :post) %>
-      <%=  %>
+    <% if current_user.present? && !current_user.talks.find_by(slug: $marcar_presenca).present? %>
+      <%= link_to 'Marcar presença', talks_marcar_presenca_path, method: :post, id: 'marcar_presenca',
+        onclick: 'document.getElementById("marcar_presenca").innerHTML = "Presença confirmada!"' %>
+    <% elsif current_user.present? && current_user.talks.find_by(slug: $marcar_presenca).present? %>
+      Presença confirmada!
     <% end %>
   </h4>
 
