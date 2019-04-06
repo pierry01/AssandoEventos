@@ -1,5 +1,9 @@
 <div class="inner">
   <section class="tiles">
-    <%= render @talks %>
+    <% @talks.each do |talk| %>
+      <% if talk.start > Time.now %>
+        <%= render talk %>
+      <% end %>
+    <% end %>
   </section>
 </div>
