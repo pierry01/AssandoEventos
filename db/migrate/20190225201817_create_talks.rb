@@ -3,8 +3,8 @@ class CreateTalks < ActiveRecord::Migration[5.2]
     create_table :talks do |t|
       t.string :title
       t.text :description
-      t.time :start
-      t.time :finish
+      t.datetime :start
+      t.datetime :finish
 
       t.timestamps
     end

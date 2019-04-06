@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_04_045242) do
+ActiveRecord::Schema.define(version: 2019_04_06_063050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 2019_04_04_045242) do
   create_table "artists", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "estoques", force: :cascade do |t|
+    t.datetime "data"
+    t.integer "quantidade"
+    t.string "tipo"
+    t.string "produto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,8 +45,8 @@ ActiveRecord::Schema.define(version: 2019_04_04_045242) do
   create_table "talks", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.time "start"
-    t.time "finish"
+    t.datetime "start"
+    t.datetime "finish"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
