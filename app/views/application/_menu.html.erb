@@ -22,7 +22,7 @@
     <li>
     
     <div class="row">
-      <div class="col-sm-6"><%= link_to('Loja', lanchonetes_path) %></div>
+      <div class="col-sm-6"><%= link_to('Lanchonete', lanchonetes_path) %></div>
       <% if current_user.present? && current_user.role == 'admin' %>
         <div class="col-sm-6"><%= link_to('Novo cardápio', new_lanchonete_path) %></div>
       <% end %>

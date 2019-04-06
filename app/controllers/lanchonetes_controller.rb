@@ -4,7 +4,7 @@ class LanchonetesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
-    @lanchonetes = Lanchonete.all
+    @lanchonetes = Lanchonete.order("RANDOM()")
     authorize @lanchonetes
   end
 
@@ -22,7 +22,7 @@ class LanchonetesController < ApplicationController
     @title = "Cadastro de item"
 
     if @lanchonete.save
-      redirect_to root_path, notice: 'Item cadastrado'
+      redirect_to lanchonetes_path, notice: 'Item cadastrado'
     else
       render :new
     end

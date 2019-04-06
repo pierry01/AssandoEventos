@@ -20,6 +20,7 @@ class TalksController < ApplicationController
   def marcar_presenca
     $talk = Talk.find_by(slug: $marcar_presenca)
     current_user.talks << $talk unless current_user.talks.find_by(slug: $marcar_presenca).present?
+    binding.pry
   end
 
   def new

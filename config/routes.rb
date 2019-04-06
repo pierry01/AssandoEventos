@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   post 'talks/marcar_presenca'
 
-  resources :lanchonetes, path: 'loja', only: [:index, :show, :new, :create]
+  resources :lanchonetes, path: 'lanchonete', only: [:index, :new, :create]
   resources :talks, path: 'palestras', only: [:show, :new, :create]
   resources :users, path: 'usuarios', only: [:new, :create]
 end

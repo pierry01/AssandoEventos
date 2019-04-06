@@ -1,9 +1,19 @@
 <header id="header">
   <div class="inner">
-    <%= link_to(root_path, class: 'logo') do %>
-        <span class="symbol"><%= image_tag('logo.svg') %></span>
-        <span class="title">Estácio TCC</span>
-    <% end %>
+    <div class="row">
+      <div class="col-sm-6">
+        <%= link_to(root_path, class: 'logo') do %>
+          <span class="symbol"><%= image_tag('logo.svg') %></span>
+          <span class="title">Estácio TCC</span>
+        <% end %>
+      </div>
+
+      <div class="col-sm-6">
+        <% if  current_user.present? && current_user.role == 'admin' %>
+          <%#= link_to  ,  %> ADMIN
+        <% end %>
+      </div>
+    </div>
 
     <nav>
       <ul>
